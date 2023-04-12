@@ -1,0 +1,76 @@
+#prevBtn,
+#nextBtn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    z-index: 1;
+}
+
+#prevBtn {
+    left: 0;
+}
+
+#nextBtn {
+    right: 0;
+}
+
+.slide {
+    position: absolute;
+    transition: opacity 1s ease-in-out;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.slide.current {
+    opacity: 1;
+    z-index: 2;
+}
+
+.slide.prev {
+    opacity: 0;
+    z-index: 1;
+    animation: fade-out 1s ease-in-out;
+}
+
+.slide.next {
+    opacity: 0;
+    z-index: 1;
+    animation: fade-in 1s ease-in-out;
+}
+
+@keyframes fade-in {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fade-out {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+    }
+}
+
+main {
+    height: 500px;
+    margin-top: 100px;
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+}
