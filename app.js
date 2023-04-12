@@ -47,9 +47,15 @@ const next = () => {
 prevBtn.addEventListener('click', prev);
 nextBtn.addEventListener('click', next);
 
+// setInterval(() => {
+//     next();
+//     console.log(counter);
+// }, 5000);
+
+const images = document.querySelectorAll('.image-container img');
+let index = 0;
+images[index].style.opacity = 1;
 setInterval(() => {
     next();
     console.log(counter);
 }, 5000);
-
-
